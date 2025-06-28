@@ -27,7 +27,7 @@ const categories = [
 
 export default function ModelsPreview() {
   return (
-    <section className="py-10 px-4 mb-20 max-w-7xl mx-auto text-center">
+    <section className="py-10 px-4 mb-10 max-w-7xl mx-auto text-center">
       <h2 className="text-2xl font-semibold mb-10">Shop by Category</h2>
       <div className="grid w-full  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {categories.map((cat) => (

@@ -6,8 +6,8 @@ export default function NavbarMobile() {
 
   const links = [
     { name: "", label: "Home" },
+    { name: "collections", label: "Collections" },
     { name: "anime", label: "Anime 🗡️" },
-    { name: "contact", label: "Collections" },
   ];
 
   return (

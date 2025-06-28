@@ -4,9 +4,9 @@ function HomeCarousel() {
   return (
     <div>
         <h1 className='text-center text-2xl font-semibold mb-10'>What is Your Theme</h1>
-    <div className=' flex justify-center items-center'>
+    <div className=' flex justify-center  items-center mb-10 px-10'>
         
-        <div className="carousel w-full lg:w-1/2 rounded-box">
+        <div className="carousel w-full lg:h-110 lg:w-full rounded-box">
   <div className="carousel-item">
     <img
       src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"

@@ -3,9 +3,9 @@ import AnimeHero from '../components/Anime/AnimeHero.jsx'
 
 function AnimePage() {
   return (
-    <div>
+    <div> 
       <AnimeHero />
-      <div className='flex justify-center items-center lg:hidden '>
+      <div className='flex justify-center items-center  '>
         <AnimeImgCarousel />
       </div>
     </div>

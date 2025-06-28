@@ -3,9 +3,9 @@ import img1 from '../../assets/1-img.png'
 
 function AnimeImgCarousel() {
   return (
-    <div className='flex justify-center items-center '>
-        <div className="carousel carousel-center bg-neutral rounded-box max-w-md space-x-4  p-4">
-  <div className="carousel-item h-110 w-90">
+    <div className='flex justify-center items-center w-full lg:px-20 '>
+        <div className="carousel carousel-center bg-neutral w-full lg:rounded-box  space-x-4  p-4">
+  <div className="carousel-item h-110 w-full ">
     <img
       src={img1}
       className="rounded-box" />
