@@ -1,132 +1,69 @@
-import React from 'react';
-import { Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import image1 from '../../assets/1-img.png';
-
-
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function ProductShowcase() {
-  const products = [
-    {
-      id: 1,
-      title: "150 GSM Floral Print Double Bedsheet with Pillow Covers",
-      image: image1,
-      rating: 4,
-      reviews: "1.4K",
-      originalPrice: "₹1,999",
-      currentPrice: "₹580",
-      discount: "71% off",
-      offerPrice: "₹420",
-      isBestseller: true
-    },
-    {
-      id: 1,
-      title: "150 GSM Floral Print Double Bedsheet with Pillow Covers",
-      image: image1,
-      rating: 5,
-      reviews: "1.4K",
-      originalPrice: "₹1,999",
-      currentPrice: "₹580",
-      discount: "71% off",
-      offerPrice: "₹420",
-      isBestseller: true
-    },
-    {
-      id: 1,
-      title: "150 GSM Floral Print Double Bedsheet with Pillow Covers",
-      image: image1,
-      rating: 3,
-      reviews: "1.4K",
-      originalPrice: "₹1,999",
-      currentPrice: "₹580",
-      discount: "71% off",
-      offerPrice: "₹420",
-      isBestseller: true
-    },
-    {
-      id: 1,
-      title: "150 GSM Floral Print Double Bedsheet with Pillow Covers",
-      image: image1,
-      rating: 4.5,
-      reviews: "1.4K",
-      originalPrice: "₹1,999",
-      currentPrice: "₹580",
-      discount: "71% off",
-      offerPrice: "₹420",
-      isBestseller: true
-    }
-  ];
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
 
-  const StarRating = ({ rating, reviews }) => {
-    return (
-      <div className="flex items-center gap-1 mb-2">
-        <div className="flex items-center gap-1 bg-indigo-600 text-white px-2 py-1 rounded text-xs font-medium">
-          <span>{rating}</span>
-          <Star className="w-3 h-3 fill-current" />
-        </div>
-        <span className="text-gray-600 text-sm">| {reviews}</span>
-      </div>
-    );
-  };
+  useEffect(() => {
+    console.log("📦 Product ID from URL:", id); // Debug
+    axios
+      .get(`http://localhost:5000/products/${id}`)
+      .then((res) => {
+        console.log("✅ Product fetched:", res.data);
+        setProduct(res.data);
+      })
+      .catch((err) => {
+        console.error("❌ Error fetching product:", err);
+      });
+  }, [id]);
+
+  // ✅ Avoid rendering before product is loaded
+  if (!product) {
+    return <div className="p-6 text-center">Loading...</div>;
+  }
 
   return (
-    <div className="bg-gray-50 min-h-screen p-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 text-sm lg:grid-cols-4 gap-6">
-          {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden relative">
-              {product.isBestseller && (
-                <div className="absolute top-3 left-3 bg-indigo-600 text-white px-3 py-1 text-xs font-medium rounded z-10">
-                  BESTSELLER
-                </div>
-              )}
-              
-              <div className="relative">
-                <img 
-                  src={product.image} 
-                  alt={product.title}
-                  className="w-full h-60 lg:h-80 object-cover"
-                />
-              </div>
+    <div className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-md mt-6">
+      <div className="flex flex-col md:flex-row gap-6">
+        <img
+          src={
+            product.image?.startsWith("http")
+              ? product.image
+              : `/${product.image?.replace(/['"]+/g, "").trim()}`
+          }
+          alt={product.title}
+          className="w-full md:w-1/2 h-96 object-cover rounded"
+        />
 
-              <div className="p-4 flex flex-col justify-between">
-                <div className="text-orange-600 text-sm font-medium mb-1">
-                  {product.brand}
-                </div>
-                
-                <h3 className="text-gray-800 font-medium mb-3 line-clamp-3 leading-tight">
-                  {product.title}
-                </h3>
+        <div className="flex-1">
+          {product.isBestseller && (
+            <span className="inline-block mb-2 bg-indigo-600 text-white px-3 py-1 text-xs font-semibold rounded">
+              BESTSELLER
+            </span>
+          )}
 
-                <StarRating rating={product.rating} reviews={product.reviews} />
+          <h1 className="text-2xl font-bold text-gray-800 mb-2">{product.title}</h1>
 
-                <div className="flex items-center gap-1 text-indigo-600 text-sm">
-                  <div className="w-2 h-2 bg-indigo-600 rounded-full"></div>
-                  <span className="text-indigo-600 text-xs lg:font-medium ">
-                    ({product.discount})
-                  </span>
-                </div>
+          <p className="text-sm text-gray-500 mb-4">
+            Rating: {product.rating} ({product.reviews} reviews)
+          </p>
 
-                <div className="flex flex-col lg:flex-row  gap-2 mb-2">
-                  <div>
-                    <span className="text-xl font-bold text-gray-900">
-                      {product.currentPrice}
-                    </span>
-                    <span className="text-gray-500 line-through text-sm ml-2">
-                      {product.originalPrice}
-                    </span>
-                  </div>
-                  {/* Buy Now Button */}
-                  <Link
-                    to="/ProductDetailsPage"
-                    className="bg-indigo-600 text-white text-xs font-medium text-center px-4 py-2 ml-auto rounded hover:bg-indigo-700 transition w-full lg:w-auto"
-                  >
-                    Buy Now
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-2xl text-gray-900 font-bold">{product.currentPrice}</span>
+            <span className="line-through text-gray-500">{product.originalPrice}</span>
+            <span className="text-green-600 font-semibold text-sm">{product.discount}</span>
+          </div>
+
+          <p className="text-sm text-gray-600">
+            Offer Price:{" "}
+            <span className="text-red-500 font-semibold">{product.offerPrice}</span>
+          </p>
+
+          <button className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

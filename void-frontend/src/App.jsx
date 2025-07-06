@@ -7,6 +7,7 @@ import NavbarMobile from './components/common/NavbarMobile';
 import AnimePage from './pages/AnimePage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import Footer from './components/common/Footer';
+import ProductShowcase from './components/Cards/ProductShowcase';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/collections' element={<CollectionsPage />} />
         <Route path="/anime" element={<AnimePage />} />
         <Route path="/ProductDetailsPage" element={<ProductDetailsPage />} />
+        <Route path="/product/:id" element={<ProductShowcase />} />
       </Routes>
       <Footer />
     </Router>

@@ -4,28 +4,27 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const PORT = 5000;
+const Product = require("./models/Product");
 
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => console.log("✅ MongoDB connected"))
-  .catch(err => console.error("❌ Mongo error:", err));
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch(err => console.error("❌ MongoDB error:", err));
 
-// Sample product schema
-const Product = mongoose.model("Product", new mongoose.Schema({
-  name: String,
-  price: Number,
-  image: String,
-  sizes: [String]
-}));
-
-app.get("/products", async (req, res) => {
-  const products = await Product.find();
-  res.json(products);
+app.get("/products/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    if (!product) return res.status(404).json({ error: "Product not found" });
+    res.json(product);
+  } catch (err) {
+    console.error("❌ Backend Error:", err.message);
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
-app.listen(PORT, () => console.log(`🚀 Server at http://localhost:${PORT}`));
+app.listen(process.env.PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${process.env.PORT}`);
+});
