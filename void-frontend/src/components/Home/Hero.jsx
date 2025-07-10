@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
+import yellowHoodie from '../../assets/yellow-hoodie.jpg'
 
 function Hero() {
   return (
 <section className="bg-white w-full lg:grid lg:h-screen lg:place-content-center">
-  <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-    <div className="max-w-prose text-left">
-      <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+
+  <div className="mx-auto w-full  px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32 lg:flex lg:justify-between items-center">
+    <aside className=" text-left lg:w-1/2  flex justify-center items-center">
+      <div className='lg:h-110 lg:w-200'>
+        <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
        {/* Anime lives in <br /> the */}
-        <strong className="text-indigo-600"> VOID <br /> </strong>
-        Go Beyond the Limits 🚀
+        <strong className="text-indigo-600 text-6xl lg:text-8xl"> VOID <br /> </strong>
+        Go Beyond the Limits <span className='text-s'>🚀</span>
       </h1>
       
 
@@ -24,14 +27,21 @@ function Hero() {
           Explore
         </Link>
 
-        <a
+        {/* <a
           className="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
           href="#"
         >
           Learn More
-        </a>
+        </a> */}
       </div>
-    </div>
+      </div>
+    </aside>
+
+    <aside className='w-1/2 hidden lg:block'>
+      <img className='rounded-tl-full' src={yellowHoodie} alt="" />
+    </aside>
+    
+
   </div>
 </section>
 

@@ -1,15 +1,21 @@
-import Banner from '../components/Home/Banner.jsx';
-import WhoAreWe from '../components/Home/WhoAreWe.jsx';
-import ModelsPreview from '../components/Home/ModelsPreview.jsx';
+
+
+// import Banner from '../components/Home/Banner.jsx';
+// import WhoAreWe from '../components/Home/WhoAreWe.jsx';
+// import ModelsPreview from '../components/Home/ModelsPreview.jsx';
+// import ProductList from '../components/Cards/ProductList.jsx';
+// import AutomaticCarousel from '../components/Carousel/AutomaticCarousel.jsx';
+// import Temp from '../components/common/temp.jsx';
+// import CardCenterImg from '../components/Cards/CardCenterImg';
+// import CardWithImgOnSide from '../components/Cards/CardWithImgOnSide.jsx';
+// import OurIconsCard from '../components/Cards/OurIconsCard.jsx';
 import Hero from '../components/Home/Hero.jsx';
 import HomeCarousel from '../components/Home/HomeCarousel.jsx';
-import CardCenterImg from '../components/Cards/CardCenterImg';
-import CardWithImgOnSide from '../components/Cards/CardWithImgOnSide.jsx';
-import OurIconsCard from '../components/Cards/OurIconsCard.jsx';
 import DiffSlider from '../components/Home/DiffSlider.jsx';
-import ProductList from '../components/Cards/ProductList.jsx';
-import AutomaticCarousel from '../components/Carousel/AutomaticCarousel.jsx';
-
+import QualityBanner from '../components/Home/QualityBanner.jsx';
+import TwoImageAndText from '../components/Home/TwoImageAndText.jsx'
+import ClientTestimonials from '../components/Home/ClientTestimonials.jsx';
+import FAQ from '../components/Home/FAQ.jsx';
 
 
 function Home() {
@@ -19,15 +25,23 @@ function Home() {
       <div className='hidden w-full flex lg:block'>
         <div className='w-1/2'></div>
       </div>
-      
-      <AutomaticCarousel />
-      <ProductList />
-      <OurIconsCard />
+      <QualityBanner />
+      <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
       <HomeCarousel />
+      <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
+      <TwoImageAndText />
       <DiffSlider />
-      <CardWithImgOnSide />
-      <CardCenterImg />
+      <ClientTestimonials />
+      
+      {/* <Temp /> */}
+      {/* <ProductList /> */}
+      {/* <CardCenterImg /> */}
+      {/* <CardWithImgOnSide /> */}
+      {/* <OurIconsCard /> */}
       {/* <ModelsPreview /> */}
+
+
+      <FAQ />
       
     </div>
 

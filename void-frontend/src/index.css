@@ -13,3 +13,38 @@ body {
 .bgw{
     background-color: #FFFEFE;
 }
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animate the container to scroll left infinitely */
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+/* Optional: hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+/* form input tag*/
+
+@layer components {
+  .form-input {
+    @apply border border-gray-500 w-full md:w-[327px] lg:w-[327px] rounded-xl p-4  focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+}

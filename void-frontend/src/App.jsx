@@ -1,5 +1,8 @@
 // App.js
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Login from './pages/Login';
+import Register from './pages/Register'
+import PageNotFound from './pages/PageNotFound';
 import Home from './pages/Home';
 import CollectionsPage from './pages/CollectionsPage';
 import NavBar from './components/common/NavBar';
@@ -8,22 +11,48 @@ import AnimePage from './pages/AnimePage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import Footer from './components/common/Footer';
 import ProductShowcase from './components/Cards/ProductShowcase';
+import ContactUsPage from './pages/ContactUsPage';
 
-function App() {
+
+function AppContent() {
+
+  const location = useLocation();
+  const hideLayoutRoutes = ['/login', '/404', '/register'];
+
+  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
+
   return (
-    <Router>
-      < NavBar />
-      <NavbarMobile />
+    <>
+      
+           {!shouldHideLayout && <NavBar />}
+           {!shouldHideLayout && <NavbarMobile />}
+      
       <Routes>
+
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/404" element={<PageNotFound />} />
         <Route path='/collections' element={<CollectionsPage />} />
         <Route path="/anime" element={<AnimePage />} />
         <Route path="/ProductDetailsPage" element={<ProductDetailsPage />} />
         <Route path="/product/:id" element={<ProductShowcase />} />
+
       </Routes>
-      <Footer />
+      
+        {!shouldHideLayout && <Footer />}
+    </>
+    
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
 
-export default App;
+

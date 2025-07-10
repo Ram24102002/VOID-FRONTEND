@@ -16,7 +16,7 @@ function NavBar() {
 
 
   return (
-    <div className="navbar px-10 bg-base-100 lg:shadow-sm">
+    <div className="navbar px-10 bg-base-100 lg:shadow-sm sticky top-0 z-30 ">
   <div className="flex-1 flex ">
     <img src={LOGO_Black_no} className='h-9' alt="" />
     <Link to={'/'} className="btn btn-ghost text-xl">VOID</Link>
@@ -25,7 +25,7 @@ function NavBar() {
 
 
 
-<div className=" bg-base-100 hidden  lg:flex item-center rounded-box z-1 mx-10 p-2 shadow">
+<div className=" bg-base-100 hidden  lg:flex item-center rounded-box mx-10 p-2 shadow">
          {links.map((link) => {
         const isActive = current === link.name;
         return (
@@ -49,7 +49,7 @@ function NavBar() {
   <div className="flex-none">
 
     {/* cart */}
-    <div className="dropdown px-5 h-full dropdown-end ">
+    <div className="dropdown px-5 h-full dropdown-end corsor-pointer">
       <CartDrawer />
       
     </div>

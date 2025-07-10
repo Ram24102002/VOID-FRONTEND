@@ -10,10 +10,10 @@ function CollectionsPage() {
   return (
     <div>
         <AutomaticCarousel />
-        <ProductList />
-        <CarouselWithNo />
-        <ProductShowcase />
+        {/* <ProductList /> */}
+        {/* <ProductShowcase /> */}
         <CardCenterImg />
+        <CarouselWithNo />
         <CardWithImgOnSide />
     </div>
   )
