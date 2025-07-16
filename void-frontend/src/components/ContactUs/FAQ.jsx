@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, UserRound } from "lucide-react";
+import Profile1 from "../../assets/fprofile1.png";
+import Profile2 from "../../assets/fprofile2.png";
+import Profile3 from "../../assets/fprofile3.png";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -12,8 +15,8 @@ const FAQ = () => {
     setOpenItem(openItem === index ? null : index);
   };
 
- const faqItems = [
-  {
+  const faqItems = [
+    {
     question: "What is this site about?",
     answer:
       "Our site is a dedicated platform for anime lovers to explore and buy high-quality, creative anime-themed t-shirts that celebrate their favorite characters and series.",
@@ -48,7 +51,7 @@ const FAQ = () => {
     answer:
       "Yes, we ship to most countries worldwide. Shipping options and delivery times will be shown at checkout based on your location.",
   },
-];
+  ];
 
   useEffect(() => {
     faqItems.forEach((_, index) => {
@@ -61,13 +64,13 @@ const FAQ = () => {
   }, [openItem]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 mt-20 md:mt-5 bg-[#FAFBFF]">
+    <div className="max-w-7xl mx-auto px-4 py-8 mt-10 md:mt-5 bg-white">
       <div className="text-center mb-8">
-        <h2 className="md:text-[60px] text-[30px] md:leading-[4.5vw] leading-[4.5vh] font-bold mb-2">
-          Frequently Asked <span className="text-indigo-600">Questions</span>
+        <h2 className="md:text-[60px] text-[30px] md:leading-[60px] leading-[35px] font-bold mb-2">
+          Frequently Asked <span className="text-blue-600">Questions</span>
         </h2>
         <p className="text-gray-500 md:text-[20px] text-[13px]">
-          Everything you need to know about the product and billing.
+          Everything you need to know.
         </p>
       </div>
 
@@ -75,7 +78,7 @@ const FAQ = () => {
         {faqItems.map((item, index) => (
           <div
             key={index}
-            className="bg-indigo-50 md:rounded-2xl rounded-3xl overflow-hidden"
+            className="bg-blue-50 md:rounded-2xl rounded-3xl overflow-hidden"
           >
             <button
               className="flex justify-between items-center w-full p-4 text-left"
@@ -110,26 +113,26 @@ const FAQ = () => {
         ))}
       </div>
 
-      <div className="bg-indigo-50 rounded-lg p-6 text-center">
+      <div className="bg-blue-50 rounded-lg p-6 text-center">
         <div className="flex justify-center mb-3">
           <div className="flex -space-x-4 relative">
             <div className="z-10">
               <img
-                src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150&h=150&fit=crop&crop=face"
+                src={Profile1}
                 alt=""
                 className="h-[56px] rounded-full border-2 border-white bg-[#abb677]"
               />
             </div>
             <div className="z-30 -mt-1">
               <img
-                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face"
+                src={Profile2}
                 alt=""
                 className="h-[56px] rounded-full border-2 border-white bg-[#c7b9da]"
               />
             </div>
             <div className="z-20">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                src={Profile3}
                 alt=""
                 className="h-[56px] rounded-full border-2 border-white bg-[#d9b9bb]"
               />
@@ -142,17 +145,19 @@ const FAQ = () => {
           Can't find the answer you're looking for? Please chat to our friendly
           team.
         </p>
-        <motion.button
-          className="bg-indigo-600 text-white font-medium py-2 px-6 rounded-md text-sm tracking-wide"
+        <a href="https://wa.me/917305790119">
+          <motion.button
+          className="bg-blue-600 text-white font-medium py-2 px-6 rounded-md text-sm tracking-wide"
           whileHover={{
             scale: 1.05,
             boxShadow: "0 5px 15px rgba(37, 99, 235, 0.4)",
           }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => navigate("/contact-us")}
+          
         >
           Get in touch
         </motion.button>
+        </a>
       </div>
     </div>
   );

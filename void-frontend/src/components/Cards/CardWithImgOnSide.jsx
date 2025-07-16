@@ -34,7 +34,7 @@ function CardWithImgOnSide() {
         <div className='flex flex-col lg:flex-row flex-wrap justify-center gap-8 lg:mx-10 p-6 grid grid-cols-1 lg:grid-cols-3 '>
             {products.map((product) => (
             <div key={product.id} className="card  card-side bg-base-100 shadow-sm">
-  <figure className='h-full lg:h-55 xl:h-80 w-2/5 xl:w-1/3'>
+  <figure className='h-full lg:h-55 xl:h-50 w-2/5 xl:w-1/3'>
     <img
         className='h-full w-full object-cover'
       src={product.img}

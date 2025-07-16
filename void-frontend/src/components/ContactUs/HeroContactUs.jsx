@@ -1,28 +1,35 @@
-import HeroContactUsImg from '../../assets/HeroContactUsImg.png'
-
 function HeroContactUs() {
   return (
-    <section className=" bg-indigo-50 px-7 flex-col lg:flex-row bg-opacity-110 flex justify-around items-center">
-      <div >
-        <div className="max-w-6xl mx-auto px-2 pt-10 lg:pt-30 ">
-          <p className="text-4xl lg:text-6xl font-bold mt-1 mb-6 text-blue-700">Contact Us</p>
-          <p className="text-lg text-gray-400 max-w-160 mb-8 ">
-            Got a question? (we won’t stop you)? <br />
-            Whatever it is, we’re just a message away!
+    <section
+      className="w-full relative bg-gradient-to-r from-[#F2F4FC] to-[#B4CDF2] 
+                        min-h-[45vh] sm:min-h-[60vh] md:min-h-[50vh] lg:min-h-[60vh]
+                        py-12 sm:py-16 md:py-20 lg:py-24 
+                        px-6 overflow-hidden flex items-center"
+    >
+      {/* Triangular shapes on the right */}
+      <div className="absolute top-0 right-0">
+        {/* top-triangle */}
+        <div className="absolute top-0 right-0 w-0 h-0 lg:border-r-[550px] lg:border-b-[350px] md:border-r-[400px] md:border-b-[300px] border-r-[300px] border-b-[200px] border-b-transparent border-r-[#1B5BD626] opacity-50"></div>
+        {/* bottom-triangle */}
+        <div className="absolute top-6 right-6 md:top-8 md:right-16 lg:top-10 lg:right-18 w-0 h-0 lg:border-r-[600px] lg:border-b-[400px] md:border-r-[400px] md:border-b-[300px] border-r-[300px] border-b-[200px] border-b-transparent border-r-[#1B5BD626] opacity-50"></div>
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-2 w-full">
+        <div className="text-left">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 mb-3 md:mb-5">
+            <span className="text-indigo-600">Contact</span> Us
+          </h1>
+          <p className="text-[#0000008A] text-lg md:text-xl max-w-md">
+            Got a question? We won't stop you
+          </p>
+          <p className="text-[#0000008A] text-lg md:text-xl max-w-md">
+            Whatever it is, we're just a message away!
           </p>
         </div>
       </div>
-      <div>
-        <div className="max-w-6xl mx-auto px-2  lg:md:pt-30 pb-10">
-          <img
-            src={HeroContactUsImg}
-            alt="Image"
-            className="w-full h-60 lg:h-90"
-          />
-        </div>
-      </div>
     </section>
-  )
+  );
 }
 
-export default HeroContactUs
+export default HeroContactUs;

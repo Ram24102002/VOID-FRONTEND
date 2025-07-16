@@ -9,12 +9,16 @@ import AutomaticCarousel from '../components/Carousel/AutomaticCarousel';
 function CollectionsPage() {
   return (
     <div>
-        <AutomaticCarousel />
-        {/* <ProductList /> */}
-        {/* <ProductShowcase /> */}
+      
+        <ProductList />
         <CardCenterImg />
+        <AutomaticCarousel />
         <CarouselWithNo />
         <CardWithImgOnSide />
+
+
+        
+        {/* <ProductShowcase /> */}
     </div>
   )
 } 

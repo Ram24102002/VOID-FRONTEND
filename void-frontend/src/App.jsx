@@ -8,10 +8,9 @@ import CollectionsPage from './pages/CollectionsPage';
 import NavBar from './components/common/NavBar';
 import NavbarMobile from './components/common/NavbarMobile';
 import AnimePage from './pages/AnimePage';
-import ProductDetailsPage from './pages/ProductDetailsPage';
 import Footer from './components/common/Footer';
-import ProductShowcase from './components/Cards/ProductShowcase';
 import ContactUsPage from './pages/ContactUsPage';
+import Product from './pages/Product.jsx';
 
 
 function AppContent() {
@@ -36,8 +35,7 @@ function AppContent() {
         <Route path="/404" element={<PageNotFound />} />
         <Route path='/collections' element={<CollectionsPage />} />
         <Route path="/anime" element={<AnimePage />} />
-        <Route path="/ProductDetailsPage" element={<ProductDetailsPage />} />
-        <Route path="/product/:id" element={<ProductShowcase />} />
+        <Route path="/product" element={<Product />} />
 
       </Routes>
       

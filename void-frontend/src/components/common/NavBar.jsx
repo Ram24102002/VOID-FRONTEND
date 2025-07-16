@@ -1,6 +1,7 @@
 import LOGO_Black_no from '../../assets/logo_black_no.png';
 import { Link, useLocation } from "react-router-dom";
 import { User } from "lucide-react"; // Assuming you have lucide-react installed for icons
+// import {MessageCircleQuestionMark } from "lucide-react"; // Assuming you have lucide-react installed for icons
 import CartDrawer from './CartDrawer'; // Assuming you have a CartDrawer component  
 
 function NavBar() {
@@ -48,10 +49,15 @@ function NavBar() {
   
   <div className="flex-none">
 
+
+<div className='px-5 h-full corsor-pointer'>
+      {/* <BadgeQuestionMark /> */}
+</div>
+    
+
     {/* cart */}
     <div className="dropdown px-5 h-full dropdown-end corsor-pointer">
       <CartDrawer />
-      
     </div>
 
 
@@ -66,12 +72,10 @@ function NavBar() {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li>
-          <a className="justify-between">
-            Profile
-            
-          </a>
-        </li>
+        
+        <li><a className="justify-between">Profile</a></li>
+        <li><Link to={'/contact-us'}>Contact Us</Link></li>
+        {/* <li><a href='/contact-us'>Contact Us a</a></li> */}
         <li><a>Orders</a></li>
         <li><a>Logout</a></li>
       </ul>

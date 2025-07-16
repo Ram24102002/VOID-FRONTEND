@@ -30,7 +30,9 @@ function Home() {
       <HomeCarousel />
       <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
       <TwoImageAndText />
+      <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
       <DiffSlider />
+      <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
       <ClientTestimonials />
       
       {/* <Temp /> */}

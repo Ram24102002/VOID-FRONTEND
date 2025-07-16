@@ -1,63 +1,75 @@
-import { Phone } from "lucide-react";
-import { Mail, MapPin, Globe, Instagram } from "lucide-react";
+ import { Phone, MapPin, Mail, Globe } from 'lucide-react';
+import { useState } from 'react';
 
+const contactInfo = [
+  {
+    icon: <Phone className="text-blue-600 w-6 h-6" />,
+    title: 'Mobile No',
+    text: '+91 7305790119',
+    to: 'tel:+917305790119',
+  },
+  {
+    icon: <MapPin className="text-blue-600 w-6 h-6" />,
+    title: 'Location',
+    text: 'Chennai',
+    to: 'https://www.google.com/maps/place/Chennai,+Tamil+Nadu/',
+  },
+  {
+    icon: <Mail className="text-blue-600 w-6 h-6" />,
+    title: 'Email',
+    text: 'Asaninnovators@gmail.com',
+    to: 'mailto:ramachandran24102002@gmail.com',
+  },
+  {
+    icon: <Globe className="text-blue-600 w-6 h-6" />,
+    title: 'Website',
+    text: 'void.in',
+    to: 'https://www.void.in',
+  },
+];
 
 export default function ContactDetails() {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleClick = (item) => {
+    if (item.title === 'Email') {
+      navigator.clipboard.writeText(item.text).then(() => {
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 2000);
+      }).catch((err) => {
+        console.error('Failed to copy email: ', err);
+      });
+    } else if (item.to.startsWith('tel:')) {
+      window.location.href = item.to;
+    } else {
+      window.open(item.to, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
-    <div className="  flex items-center justify-center py-10 lg:p-10">
-      <div className="w-full ">
-
-        {/* Heading */}
-        <h2 className="text-3xl text-gray-700 font-bold mb-2">Get in Touch</h2>
-        <p className="text-gray-400 text-sm mb-15 line-clamp-3 lg:line-clamp-2">
-          We'd love to hear from you — whether you've got questions,  suggestions, or just want to say hi (we love a good hello!)
-        </p>
-
-        {/* Contact Info */}
-        {[
-          {
-            icon: <Phone />,
-            label: "+91 7305790119",
-            link: "tel:+917305790119",
-          },
-          {
-            icon: <Mail />,
-            label: "abcdefghijkl@gmail.com",
-            link: "mailto:abcdefghijkl@gmail.com",
-          },
-          {
-            icon: <MapPin />,
-            label: "Chennai, Tamil Nadu, India",
-          },
-          {
-            icon: <Globe />,
-            label: "VoidFassion.com",
-            link: "https://google.com",
-          },
-          {
-            icon: <Instagram />,
-            label: "Void_Fassion",
-            link: "https://instagram.com/",
-          },
-        ].map((info, idx) => (
-          <div key={idx} className="flex items-center gap-8 my-10 text-gray-700">
-            <span className="text-white p-2 bg-blue-400 rounded-full">{info.icon}</span>
-            {info.link ? (
-              <a
-                href={info.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xl hover:underline"
-              >
-                {info.label}
-              </a>
-            ) : (
-              <span className="text-xl">{info.label}</span>
-            )}
-          </div>
+    <div className="relative">
+      <div className="flex flex-wrap justify-center gap-6 p-12 md:p-10">
+        {contactInfo.map((item, index) => (
+          <button
+            key={index}
+            type="button"
+            onClick={() => handleClick(item)}
+            className="w-full lg:w-[250px] cursor-pointer focus:outline-none"
+          >
+            <div className="bg-indigo-50 text-center text-lg h-[150px] lg:w-[250px] rounded-lg shadow-sm flex flex-col items-center justify-center hover:bg-indigo-100 transition duration-300">
+              <div className="flex justify-center mb-2">{item.icon}</div>
+              <h4 className="font-semibold">{item.title}</h4>
+              <p className="text-sm text-gray-700 whitespace-pre-line">{item.text}</p>
+            </div>
+          </button>
         ))}
-
       </div>
+
+      {showToast && (
+        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded shadow-md text-sm animate-fadeInOut z-50">
+          Email Copied ✅
+        </div>
+      )}
     </div>
   );
 }
