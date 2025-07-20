@@ -15,7 +15,11 @@ import DiffSlider from '../components/Home/DiffSlider.jsx';
 import QualityBanner from '../components/Home/QualityBanner.jsx';
 import TwoImageAndText from '../components/Home/TwoImageAndText.jsx'
 import ClientTestimonials from '../components/Home/ClientTestimonials.jsx';
+import Stats from '../components/Home/Stats.jsx';
 import FAQ from '../components/Home/FAQ.jsx';
+import SkeletonCard from '../components/Skeleton/SkeletonCard.jsx';
+import CardCenterImgHome from '../components/Home/CardCenterImgHome.jsx';
+
 
 
 function Home() {
@@ -26,14 +30,19 @@ function Home() {
         <div className='w-1/2'></div>
       </div>
       <QualityBanner />
-      <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
+      <div className="border-t hidden md:block  border-gray-300 my-6 h-1 w-full"></div>
       <HomeCarousel />
-      <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
+      <div className="border-t hidden md:block border-gray-300 my-6 h-1 w-full"></div>
       <TwoImageAndText />
-      <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
+      <div className="border-t hidden md:block border-gray-300 my-6 h-1 w-full"></div>
+      <CardCenterImgHome />
       <DiffSlider />
-      <div className="border-t border-gray-300 my-6 h-1 w-full"></div>
+      {/* <div className="border-t hidden md:block border-gray-300 my-6 h-1 w-full"></div> */}
+      <Stats />
+      {/* <div className="border-t hidden md:block border-gray-300 my-6 h-1 w-full"></div> */}
       <ClientTestimonials />
+
+      {/* <SkeletonCard /> */}
       
       {/* <Temp /> */}
       {/* <ProductList /> */}

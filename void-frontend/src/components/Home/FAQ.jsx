@@ -61,7 +61,7 @@ const FAQ = () => {
   }, [openItem]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 mt-20 md:mt-5 bg-[#FAFBFF]">
+    <div className="max-w-7xl mx-auto px-4 py-8 mt-20 md:mt-5 ">
       <div className="text-center mb-8">
         <h2 className="md:text-[60px] text-[30px] md:leading-[4.5vw] leading-[4.5vh] font-bold mb-2">
           Frequently Asked <span className="text-indigo-600">Questions</span>

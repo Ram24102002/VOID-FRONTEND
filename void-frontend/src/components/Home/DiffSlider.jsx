@@ -3,7 +3,7 @@ import React from 'react'
 function DiffSlider() {
   return (
    
-        <figure className="diff lgp-10 h-100 w-full lg:w-200 aspect-16/9 my-10" tabIndex={0}>
+        <figure className="diff lgp-10 h-100 w-full lg:w-200 aspect-16/9 my-20" tabIndex={0}>
   <div className="diff-item-1" role="img" tabIndex={0}>
     <div className="bg-primary text-primary-content grid place-content-center text-8xl font-black">
       VOID

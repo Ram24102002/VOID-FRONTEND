@@ -67,7 +67,7 @@ function CardCenterImg() {
     <img
       src={product.img}
       alt="Shoes"
-      className="rounded-xl" />
+      className="rounded-xl h-100" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{product.title}</h2>

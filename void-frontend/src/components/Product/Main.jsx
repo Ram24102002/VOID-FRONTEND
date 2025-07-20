@@ -68,7 +68,6 @@ export default function Main() {
           <div>
             <div className="flex items-center justify-between mb-3">
               <label className="text-sm font-medium">Color</label>
-              <span className="text-sm text-gray-600">Black / Olive</span>
             </div>
             <div className="flex gap-2">
               {colors.map((color) => (
@@ -97,8 +96,8 @@ export default function Main() {
                   onClick={() => setSelectedSize(size)}
                   className={`py-2 px-3 border rounded text-sm font-medium ${
                     selectedSize === size
-                      ? 'border-black bg-black text-white'
-                      : 'border-gray-300 hover:border-gray-400'
+                      ? 'border-black bg-black text-white hover:bg-indigo-600'
+                      : 'border-gray-300 hover:border-indigo-600'
                   }`}
                 >
                   {size}
@@ -107,7 +106,7 @@ export default function Main() {
             </div>
           </div>
           {/* Add to Bag Button */}
-          <button className="w-full bg-black text-white py-3 font-medium rounded hover:bg-gray-800 transition-colors">
+          <button className="w-full bg-black text-white py-3 font-medium rounded hover:bg-indigo-600 transition-colors">
             ADD TO BAG
           </button>
           {/* Shipping and Returns Info */}
