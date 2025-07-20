@@ -1,4 +1,4 @@
-import LOGO_Black_no from '../../assets/logo_black_no.png';
+import LOGO_Black_no from '../../assets/LOGO_Black_no.png';
 import { Link, useLocation } from "react-router-dom";
 import { User } from "lucide-react"; // Assuming you have lucide-react installed for icons
 // import {MessageCircleQuestionMark } from "lucide-react"; // Assuming you have lucide-react installed for icons
