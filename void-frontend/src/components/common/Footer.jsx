@@ -1,5 +1,5 @@
 import React from 'react'
-import LOGO_Black_no from '../../assets/logo_black_no.png';
+import LOGO_Black_no from '../../assets/LOGO_Black_no.png';
 
 function Footer() {
 
