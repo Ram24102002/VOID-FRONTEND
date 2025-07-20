@@ -17,6 +17,7 @@ import TwoImageAndText from '../components/Home/TwoImageAndText.jsx'
 import ClientTestimonials from '../components/Home/ClientTestimonials.jsx';
 import Stats from '../components/Home/Stats.jsx';
 import FAQ from '../components/Home/FAQ.jsx';
+import SkeletonCard from '../components/Skeleton/SkeletonCard.jsx';
 import CardCenterImgHome from '../components/Home/CardCenterImgHome.jsx';
 
 

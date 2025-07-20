@@ -4,6 +4,7 @@ import CardWithImgOnSide from '../components/Cards/CardWithImgOnSide';
 import CarouselWithNo from '../components/Carousel/CarouselWithNo';
 import ProductList from '../components/Cards/ProductList';
 import AutomaticCarousel from '../components/Carousel/AutomaticCarousel';
+import CardCenterImgHome from '../components/Home/CardCenterImgHome';
 
 
 function CollectionsPage() {
@@ -11,8 +12,9 @@ function CollectionsPage() {
     <div>
       
         <ProductList />
-        <CardCenterImg />
         <AutomaticCarousel />
+        <CardCenterImgHome />
+        <ProductList />
         <CarouselWithNo />
         <CardWithImgOnSide />
 
