@@ -1,8 +1,8 @@
 import React from 'react'
 import insta from '../../assets/contactUs/Instagram.png'
 import linkedin from '../../assets/contactUs/linkedin.png'
-import youtube from '../../assets/ContactUs/youtube.png'
-import whatsapp from '../../assets/ContactUs/whatsapp.png'
+import youtube from '../../assets/contactUs/youtube.png'
+import whatsapp from '../../assets/contactUs/whatsapp.png'
 
 function SocialMedia() {
   return (
