@@ -11,7 +11,7 @@ export default function NavbarMobile() {
   ];
 
   return (
-    <nav className="flex space-x-6 border-b border-gray-200 bg-base-100 lg:hidden">
+    <nav className="flex border-b border-gray-200 bg-base-100 lg:hidden">
       {links.map((link) => {
         const isActive = current === link.name;
         return (
