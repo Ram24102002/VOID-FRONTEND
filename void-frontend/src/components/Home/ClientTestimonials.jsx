@@ -9,7 +9,7 @@ const TestimonialCard = ({
   avatar,
 }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 w-[320px] sm:w-[360px] md:w-[400px] flex-shrink-0 flex flex-col justify-between">
+    <div className="bg-white dark:bg-gray-200 rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 w-[320px] sm:w-[360px] md:w-[400px] flex-shrink-0 flex flex-col justify-between">
       {/* Profile Section */}
       <div className="flex items-center mb-4">
         <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
@@ -87,7 +87,7 @@ const ClientTestimonials = () => {
     <section className="max-w-7xl my-15 mr-3 ml-3 mx-auto overflow-x-hidden hide-scrollbar py-10 lg:w-full w-[360px] md:w-[650px] ">
       {/* Section Header */}
       <div className="text-center mb-12">
-        <h2 className="  lg:text-4xl  text-2xl font-bold text-gray-900 mb-4 ">
+        <h2 className="  lg:text-4xl  text-2xl font-bold text-gray-900 dark:text-white mb-4 ">
           Client Testimonials
         </h2>
       </div>

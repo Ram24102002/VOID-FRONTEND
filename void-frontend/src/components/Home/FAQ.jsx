@@ -81,7 +81,7 @@ const FAQ = () => {
               className="flex justify-between items-center w-full p-4 text-left"
               onClick={() => toggleItem(index)}
             >
-              <span className="font-medium">{item.question}</span>
+              <span className="font-medium dark:text-gray-800">{item.question}</span>
               <ChevronDown
                 className={`transition-transform duration-500 ${
                   openItem === index ? "rotate-180" : ""
@@ -137,8 +137,8 @@ const FAQ = () => {
           </div>
         </div>
 
-        <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
-        <p className="text-gray-400 text-sm font-medium mb-4">
+        <h3 className="text-xl font-bold dark:text-gray-800 mb-2">Still have questions?</h3>
+        <p className="text-gray-400 dark:text-gray-600 text-sm  font-medium mb-4">
           Can't find the answer you're looking for? Please chat to our friendly
           team.
         </p>

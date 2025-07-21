@@ -6,7 +6,7 @@ import mockupHoodie2 from '../../assets/mockup-hoodie2.webp'
 function TwoImageAndText() {
   return (
     <section>
-  <div className="mx-auto max-w-screen-2xl bg-white px-4 py-8 sm:px-6 lg:px-8 my-10">
+  <div className="mx-auto max-w-screen-2xl  px-4 py-8 sm:px-6 lg:px-8 my-10">
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div className="bg-gray-600 p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="mx-auto max-w-xl text-center">

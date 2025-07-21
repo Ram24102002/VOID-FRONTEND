@@ -2,7 +2,7 @@ import React from 'react'
 
 function Stats() {
   return (
-        <div className="stats shadow  stats-vertical lg:stats-horizontal  bg-gray-100 flex flex-col lg:flex-row justify-around items-center p-6 my-20 rounded-lg  ">
+        <div className="stats shadow dark:text-gray-800 stats-vertical lg:stats-horizontal  bg-gray-200 flex flex-col lg:flex-row justify-around items-center p-6 my-20 rounded-lg  ">
   <div className="stat ">
     <div className="stat-figure text-primary">
       {/* Heart icon */}
@@ -21,9 +21,9 @@ function Stats() {
       </svg>
     </div>
     <div className='flex flex-col items-center'>
-      <div className="stat-title  xl:text-xl">Number of customer</div>
+      <div className="stat-title  dark:text-gray-800 xl:text-xl">Number of customer</div>
     <div className="stat-value text-primary xl:text-6xl xl:p-4">2.6M</div>
-    <div className="stat-desc xl:text-xl">15% more than last month</div>
+    <div className="stat-desc dark:text-gray-800 xl:text-xl">15% more than last month</div>
     </div>
   </div>
 
@@ -47,9 +47,9 @@ function Stats() {
       </svg>
     </div>
       <div className='flex flex-col items-center justify-center'>
-      <div className="stat-title xl:text-xl">New customer last month</div>
+      <div className="stat-title dark:text-gray-800 xl:text-xl">New customer last month</div>
     <div className="stat-value text-secondary xl:text-6xl p-4">25.6K</div>
-    <div className="stat-desc xl:text-xl">21% more than last month</div>
+    <div className="stat-desc dark:text-gray-800 xl:text-xl">21% more than last month</div>
     </div>
   </div>
 
@@ -59,7 +59,7 @@ function Stats() {
   <div className="stat flex flex-col items-center justify-center">
     <div className="stat-value  xl:text-6xl p-4">86%</div>
     {/* <div className="stat-title"></div> */}
-    <div className="stat-desc text-secondary  xl:text-xl">More customer joined</div>
+    <div className="stat-desc text-secondary dark:text-gray-800  xl:text-xl">More customer joined</div>
   </div>
 </div>
   )
