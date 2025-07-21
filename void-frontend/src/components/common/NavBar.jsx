@@ -1,4 +1,5 @@
 import LOGO_Black_no from '../../assets/LOGO_Black_no.png';
+import LOGO_Gold_no from '../../assets/LOGO_Gold_no.png';
 import { Link, useLocation } from "react-router-dom";
 import { User } from "lucide-react"; // Assuming you have lucide-react installed for icons
 // import {MessageCircleQuestionMark } from "lucide-react"; // Assuming you have lucide-react installed for icons
@@ -19,7 +20,16 @@ function NavBar() {
   return (
     <div className="navbar px-10 bg-base-100 lg:shadow-sm sticky top-0 z-30 ">
   <div className="flex-1 flex ">
-    <img src={LOGO_Black_no} className='h-9' alt="" />
+    <img 
+  className='h-9 dark:hidden' 
+  src={LOGO_Black_no} 
+  alt="" 
+/>
+<img 
+  className='h-9 hidden dark:block' 
+  src={LOGO_Gold_no} 
+  alt="" 
+/>
     <Link to={'/'} className="btn btn-ghost text-xl">VOID</Link>
   </div>
 

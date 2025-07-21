@@ -2,7 +2,7 @@ import React from 'react'
 
 function Stats() {
   return (
-        <div className="stats shadow dark:text-gray-800 stats-vertical lg:stats-horizontal  bg-gray-200 flex flex-col lg:flex-row justify-around items-center p-6 my-20 rounded-lg  ">
+        <div className="stats shadow dark:text-gray-800 stats-vertical lg:stats-horizontal bg-gray-100 dark:bg-gray-200 flex flex-col lg:flex-row justify-around items-center p-6 my-20 rounded-lg  ">
   <div className="stat ">
     <div className="stat-figure text-primary">
       {/* Heart icon */}
@@ -56,11 +56,7 @@ function Stats() {
 
 
 
-  <div className="stat flex flex-col items-center justify-center">
-    <div className="stat-value  xl:text-6xl p-4">86%</div>
-    {/* <div className="stat-title"></div> */}
-    <div className="stat-desc text-secondary dark:text-gray-800  xl:text-xl">More customer joined</div>
-  </div>
+  
 </div>
   )
 }

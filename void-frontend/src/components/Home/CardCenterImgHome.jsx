@@ -36,7 +36,7 @@ function CardCenterImgHome() {
 
   return (
     <div>
-      <h1 className='text-center text-2xl font-semibold mt-10'>Our Anime Themes</h1>
+      <h1 className='text-center text-2xl font-semibold mt-10' id='theme-card'>Our Anime Themes</h1>
       <div className='flex flex-wrap justify-center gap-5  p-5 md:p-10'>
         {products.map((product) => (
             <div key={product.id} className="card bg-base-100  shadow-sm">
