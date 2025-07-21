@@ -94,7 +94,7 @@ const ProductList = () => {
         <div key={product.id} className="bg-white shadow-lg rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform">
           <img src={product.img} alt={product.title} className="w-full h-66 object-cover" />
           <div className="p-4">
-            <h3 className="text-lg font-semibold line-clamp-1">{product.title}</h3>
+            <h3 className="text-lg font-semibold line-clamp-1 dark:text-black">{product.title}</h3>
             <p className="text-sm text-gray-500 mt-1 line-clamp-1">{product.description}</p>
             <div className="flex items-center justify-between mt-4">
               <div>

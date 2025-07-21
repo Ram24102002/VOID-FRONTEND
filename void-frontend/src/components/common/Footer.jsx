@@ -1,5 +1,7 @@
 import React from 'react'
 import LOGO_Black_no from '../../assets/LOGO_Black_no.png';
+import LOGO_Gold_no from '../../assets/LOGO_Gold_no.png';
+
 
 function Footer() {
 
@@ -30,7 +32,8 @@ return (
             <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
                 <aside className="grid-flow-col items-center">
                     {/* Replace SVG with local image */}
-                    <img src={LOGO_Black_no} alt="Logo" width={40} height={40} />
+                    <img src={LOGO_Black_no} alt="Logo"  className=' dark:hidden'  width={40} height={40} />
+                    <img src={LOGO_Gold_no} alt="Logo" className='hidden dark:block' width={40} height={40} />
                     <p>
                         VOID Fashion Ltd.
                         <br />
