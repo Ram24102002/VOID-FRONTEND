@@ -24,17 +24,17 @@ import CardCenterImgHome from '../components/Home/CardCenterImgHome.jsx';
 
 function Home() {
   return (
-    <div className="flex flex-col items-center bgw   bg-gray-100">
+    <div className="flex flex-col items-center ">
       <Hero />
       <div className='hidden w-full flex lg:block'>
         <div className='w-1/2'></div>
       </div>
       <QualityBanner />
-      <div className="border-t hidden md:block  border-gray-300 my-6 h-1 w-full"></div>
+      <div className="border-t hidden md:block  border-gray-300 dark:hidden my-6 h-1 w-full"></div>
       <HomeCarousel />
-      <div className="border-t hidden md:block border-gray-300 my-6 h-1 w-full"></div>
+      <div className="border-t hidden md:block border-gray-300 dark:hidden my-6 h-1 w-full"></div>
       <TwoImageAndText />
-      <div className="border-t hidden md:block border-gray-300 my-6 h-1 w-full"></div>
+      <div className="border-t hidden md:block border-gray-300 dark:hidden my-6 h-1 w-full"></div>
       <CardCenterImgHome />
       <DiffSlider />
       {/* <div className="border-t hidden md:block border-gray-300 my-6 h-1 w-full"></div> */}

@@ -33,7 +33,7 @@ function NavBar() {
           <Link
             key={link.name}
             to={`/${link.name}`}
-            className={`border-b-2 h-10 text-sm font-medium transition-colors duration-200 w-23  lg:bg-base-100 hidden lg:block flex items-center justify-center lg:rounded-box z-1 p-2 lg:shadow ${
+            className={`border-b-2 h-10 text-sm font-medium dark:text-white transition-colors duration-200 w-23  lg:bg-base-100 hidden lg:block flex items-center justify-center lg:rounded-box z-1 p-2 lg:shadow ${
               isActive
                 ? "border-indigo-600 text-indigo-600"
                 : "border-transparent text-gray-600 hover:border-indigo-600 hover:text-blue-500"
