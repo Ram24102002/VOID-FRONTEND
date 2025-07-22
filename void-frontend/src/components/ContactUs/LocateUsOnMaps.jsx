@@ -2,7 +2,7 @@ import React from 'react'
 
 function LocateUsOnMaps() {
   return (
-    <div className="flex flex-col w-full p-0 lg:p-10 lg:pt-0 bg-white items-center justify-center">
+    <div className="flex flex-col w-full p-0 lg:p-10 lg:pt-0  items-center justify-center">
       <h3 className="text-2xl lg:hidden px-10 lg:p-0 lg:text-3xl text-gray-700 mb-10 w-full justify-start items-start flex  lg:justify-center lg:items-center">
         Locate Us on Maps
       </h3>

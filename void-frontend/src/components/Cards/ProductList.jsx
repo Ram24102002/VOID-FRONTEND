@@ -7,6 +7,8 @@ import black from '../../assets/ColorTheme/black.jpg'
 import Yellow from '../../assets/ColorTheme/Yellow.jpg'
 import tame from '../../assets/ColorTheme/tame.jpg'
 import chessboard from '../../assets/ColorTheme/chessboard.jpg'
+// import { Link } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -89,9 +91,9 @@ const ProductList = () => {
    
     <div>
       <h1 className="text-center text-2xl font-semibold mt-10">Our Bestsellers 🛒</h1>
-    <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 p-15">
+    <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-10 p-15">
       {products.map((product) => (
-        <div key={product.id} className="bg-white shadow-lg rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform">
+        <div key={product.id} className="bg-white shadow-lg rounded-2xl max-w-100 overflow-hidden hover:scale-[1.02] transition-transform">
           <img src={product.img} alt={product.title} className="w-full h-66 object-cover" />
           <div className="p-4">
             <h3 className="text-lg font-semibold line-clamp-1 dark:text-black">{product.title}</h3>
@@ -103,9 +105,16 @@ const ProductList = () => {
               </div>
               <StarRating rating={product.rating} />
             </div>
-            <button className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-xl hover:bg-gray-800 transition">
+            <div className="flex justify-between items-center mt-4">
+              <Link to={'/Product'} className="mt-4 w-full bg-black text-white py-2 rounded-sm m-2 hover:bg-gray-800 transition">
+                 <button className='text-center w-full'>
+                    View Product
+                 </button>
+              </Link>
+            <button className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-sm m-2 hover:bg-gray-800 transition">
               Add to Cart
             </button>
+            </div>
           </div>
         </div>
       ))}

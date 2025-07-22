@@ -57,10 +57,10 @@ export default function Main() {
                   <Star key={i} className="w-4 h-4 fill-current text-yellow-400" />
                 ))}
               </div>
-              <span className="text-sm text-gray-600">5.0 (5 Reviews)</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400">5.0 (5 Reviews)</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-gray-500 line-through">₹238</span>
+              <span className="text-gray-500 dark:text-gray-400 line-through">₹238</span>
               <span className="text-2xl font-medium">₹167</span>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function Main() {
           <div>
             <div className="flex items-center justify-between mb-3">
               <label className="text-sm font-medium">Size</label>
-              <button className="text-sm text-gray-600 underline">Size Guide</button>
+              <button className="text-sm text-gray-600 dark:text-gray-400 underline">Size Guide</button>
             </div>
             <div className="grid grid-cols-6 gap-2">
               {sizes.map((size) => (
@@ -96,7 +96,7 @@ export default function Main() {
                   onClick={() => setSelectedSize(size)}
                   className={`py-2 px-3 border rounded text-sm font-medium ${
                     selectedSize === size
-                      ? 'border-black bg-black text-white hover:bg-indigo-600'
+                      ? 'border-black bg-black dark:bg-indigo-600 text-white hover:bg-indigo-600'
                       : 'border-gray-300 hover:border-indigo-600'
                   }`}
                 >
@@ -106,7 +106,7 @@ export default function Main() {
             </div>
           </div>
           {/* Add to Bag Button */}
-          <button className="w-full bg-black text-white py-3 font-medium rounded hover:bg-indigo-600 transition-colors">
+          <button className="w-full bg-black  dark:bg-indigo-600 text-white py-3 font-medium rounded hover:bg-indigo-800 transition-colors">
             ADD TO BAG
           </button>
           {/* Shipping and Returns Info */}
@@ -115,7 +115,7 @@ export default function Main() {
               <Truck className="w-5 h-5 mt-0.5" />
               <div>
                 <div className="font-medium">Free Shipping</div>
-                <div className="text-sm text-gray-600">On all U.S. orders over ₹300. <button className="underline">Learn more.</button></div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">On all U.S. orders over ₹300. <button className="underline">Learn more.</button></div>
               </div>
             </div>
             
@@ -123,7 +123,7 @@ export default function Main() {
               <RotateCcw className="w-5 h-5 mt-0.5" />
               <div>
                 <div className="font-medium">Easy Returns</div>
-                <div className="text-sm text-gray-600">Extended returns through January 31. <button className="underline">Returns Details.</button></div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Extended returns through January 31. <button className="underline">Returns Details.</button></div>
               </div>
             </div>
             
@@ -131,14 +131,14 @@ export default function Main() {
               <Gift className="w-5 h-5 mt-0.5" />
               <div>
                 <div className="font-medium">Send It As A Gift</div>
-                <div className="text-sm text-gray-600">Add a free personalized note during checkout.</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Add a free personalized note during checkout.</div>
               </div>
             </div>
           </div>
           {/* Product Description */}
           <div>
             <h3 className="font-medium mb-2">Part shirt, part jacket, all style.</h3>
-            <div className="text-sm text-gray-700 space-y-2">
+            <div className="text-sm text-gray-700 dark:text-gray-400 space-y-2">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nulla sunt laboriosam soluta inventore explicabo odit possimus atque mollitia modi delectus, corrupti quo, porro nesciunt id illum natus expedita similique?
               </p>
@@ -148,11 +148,11 @@ export default function Main() {
           <div className="space-y-3">
             <div className="flex">
               <span className="font-medium w-16">Model</span>
-              <span className="text-sm text-gray-700">Model is 6'2", wearing a size M</span>
+              <span className="text-sm text-gray-700 dark:text-gray-400">Model is 6'2", wearing a size M</span>
             </div>
             <div className="flex">
               <span className="font-medium w-16">Fit</span>
-              <div className="text-sm text-gray-700">
+              <div className="text-sm text-gray-700 dark:text-gray-400">
                 <span>Questions about fit?</span>
                 <br />
                 <Link to='/contact-us' ><button className="underline cursor-pointer">Contact Us</button></Link>

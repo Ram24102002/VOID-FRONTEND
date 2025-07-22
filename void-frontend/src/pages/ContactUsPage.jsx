@@ -8,8 +8,8 @@ import FAQ from '../../src/components/ContactUs/FAQ';
 function ContactUsPage() {
   return (
     
-      <section className='flex flex-col w-full  bg-white items-center justify-center'>
-        <div className='w-full '>
+      <section className='flex flex-col w-full  items-center justify-center'>
+        <div className='w-full ' id='contact-us-hero'>
           <HeroContactUs />
         </div>
         < ContactDetails />

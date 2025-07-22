@@ -4,8 +4,8 @@
 function ContactUsForm() {
   return (
     <div>
-        <section className='flex flex-col  w-full p-10 bg-white items-center justify-center'>
-            <h3 className="text-2xl lg:text-3xl text-gray-700  mb-10 w-full justify-start items-start flex">Send Us a Message</h3>
+        <section className='flex flex-col  w-full p-10  items-center justify-center'>
+            <h3 className="text-2xl lg:text-3xl text-gray-700 dark:text-white mb-10 w-full justify-start items-start flex">Send Us a Message</h3>
         <form className="space-y-4 justify-start items-start flex flex-col w-full ">
           <div className="grid w-full grid-cols-1 gap-8">
             <div>
