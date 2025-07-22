@@ -23,8 +23,8 @@ const contactInfo = [
   {
     icon: <Globe className="text-blue-600 w-6 h-6" />,
     title: 'Website',
-    text: 'void.in',
-    to: 'https://www.void.in',
+    text: 'void-fashion.com',
+    to: 'https://void-fashion.onrender.com/',
   },
 ];
 
@@ -54,11 +54,11 @@ export default function ContactDetails() {
             key={index}
             type="button"
             onClick={() => handleClick(item)}
-            className="w-full lg:w-[250px] cursor-pointer focus:outline-none"
+            className="w-full lg:w-[250px]  cursor-pointer focus:outline-none"
           >
-            <div className="bg-indigo-50 text-center text-lg h-[150px] lg:w-[250px] rounded-lg shadow-sm flex flex-col items-center justify-center hover:bg-indigo-100 transition duration-300">
+            <div className="bg-indigo-50 dark:bg-indigo-200 text-center text-lg h-[150px] lg:w-[250px] rounded-lg shadow-sm flex flex-col items-center justify-center hover:bg-indigo-100 transition duration-300">
               <div className="flex justify-center mb-2">{item.icon}</div>
-              <h4 className="font-semibold">{item.title}</h4>
+              <h4 className="font-semibold dark:text-black">{item.title}</h4>
               <p className="text-sm text-gray-700 whitespace-pre-line">{item.text}</p>
             </div>
           </button>

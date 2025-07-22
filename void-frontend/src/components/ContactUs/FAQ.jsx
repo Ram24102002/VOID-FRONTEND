@@ -64,12 +64,12 @@ const FAQ = () => {
   }, [openItem]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 mt-10 md:mt-5 bg-white">
+    <div className="max-w-7xl mx-auto px-4 py-8 mt-10 md:mt-5">
       <div className="text-center mb-8">
         <h2 className="md:text-[60px] text-[30px] md:leading-[60px] leading-[35px] font-bold mb-2">
           Frequently Asked <span className="text-blue-600">Questions</span>
         </h2>
-        <p className="text-gray-500 md:text-[20px] text-[13px]">
+        <p className="text-gray-500 dark:text-gray-400  md:text-[20px] text-[13px]">
           Everything you need to know.
         </p>
       </div>
@@ -78,15 +78,15 @@ const FAQ = () => {
         {faqItems.map((item, index) => (
           <div
             key={index}
-            className="bg-blue-50 md:rounded-2xl rounded-3xl overflow-hidden"
+            className="bg-blue-100 dark:bg-indigo-200  md:rounded-2xl rounded-3xl overflow-hidden"
           >
             <button
               className="flex justify-between items-center w-full p-4 text-left"
               onClick={() => toggleItem(index)}
             >
-              <span className="font-medium">{item.question}</span>
+              <span className="font-medium dark:text-black ">{item.question}</span>
               <ChevronDown
-                className={`transition-transform duration-500 ${
+                className={`transition-transform dark:text-black  duration-500 ${
                   openItem === index ? "rotate-180" : ""
                 }`}
                 size={20}
@@ -107,13 +107,13 @@ const FAQ = () => {
                     : "0px",
               }}
             >
-              <div className="text-gray-600">{item.answer}</div>
+              <div className="text-gray-600 p-5">{item.answer}</div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="bg-blue-50 rounded-lg p-6 text-center">
+      <div className="bg-indigo-50 dark:bg-indigo-100 rounded-lg p-6 text-center">
         <div className="flex justify-center mb-3">
           <div className="flex -space-x-4 relative">
             <div className="z-10">
@@ -140,8 +140,8 @@ const FAQ = () => {
           </div>
         </div>
 
-        <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
-        <p className="text-gray-400 text-sm font-medium mb-4">
+        <h3 className="text-xl font-bold dark:text-gray-800 mb-2">Still have questions?</h3>
+        <p className="text-gray-400 dark:text-gray-600 text-sm font-medium mb-4">
           Can't find the answer you're looking for? Please chat to our friendly
           team.
         </p>
@@ -155,7 +155,7 @@ const FAQ = () => {
           whileTap={{ scale: 0.95 }}
           
         >
-          Get in touch
+          Get in touch through WhatsApp
         </motion.button>
         </a>
       </div>

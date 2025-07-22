@@ -43,6 +43,7 @@ function NavBar() {
           <Link
             key={link.name}
             to={`/${link.name}`}
+            onClick={() => window.scrollTo(0, 0)}
             className={`border-b-2 h-10 text-sm font-medium dark:text-white transition-colors duration-200 w-23  lg:bg-base-100 hidden lg:block flex items-center justify-center lg:rounded-box z-1 p-2 lg:shadow ${
               isActive
                 ? "border-indigo-600 text-indigo-600"

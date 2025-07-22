@@ -37,7 +37,7 @@ const ReviewBox = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white">
+    <div className="max-w-4xl mx-auto p-6  ">
       <h2 className="text-2xl font-semibold text-center mb-8">Reviews</h2>
       
       <div className="flex flex-col lg:flex-row gap-12">
@@ -66,7 +66,7 @@ const ReviewBox = () => {
                     }}
                   ></div>
                 </div>
-                <span className="text-sm text-gray-600 w-4">{item.count}</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400 w-4">{item.count}</span>
               </div>
             ))}
           </div>

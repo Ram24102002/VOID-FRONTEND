@@ -66,7 +66,7 @@ const FAQ = () => {
         <h2 className="md:text-[60px] text-[30px] md:leading-[4.5vw] leading-[4.5vh] font-bold mb-2">
           Frequently Asked <span className="text-indigo-600">Questions</span>
         </h2>
-        <p className="text-gray-500 md:text-[20px] text-[13px]">
+        <p className="text-gray-500 dark:text-gray-400 md:text-[20px] text-[13px]">
           Everything you need to know about the product and billing.
         </p>
       </div>
@@ -75,7 +75,7 @@ const FAQ = () => {
         {faqItems.map((item, index) => (
           <div
             key={index}
-            className="bg-indigo-50 md:rounded-2xl rounded-3xl overflow-hidden"
+            className="bg-indigo-100 dark:bg-indigo-200 md:rounded-2xl rounded-3xl overflow-hidden"
           >
             <button
               className="flex justify-between items-center w-full p-4 text-left"
@@ -83,7 +83,7 @@ const FAQ = () => {
             >
               <span className="font-medium dark:text-gray-800">{item.question}</span>
               <ChevronDown
-                className={`transition-transform duration-500 ${
+                className={`transition-transform dark:text-black duration-500 ${
                   openItem === index ? "rotate-180" : ""
                 }`}
                 size={20}
@@ -104,13 +104,13 @@ const FAQ = () => {
                     : "0px",
               }}
             >
-              <div className="text-gray-600">{item.answer}</div>
+              <div className="text-gray-600 p-5">{item.answer}</div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="bg-indigo-50 rounded-lg p-6 text-center">
+      <div className="bg-indigo-50 dark:bg-indigo-100 rounded-lg p-6 text-center">
         <div className="flex justify-center mb-3">
           <div className="flex -space-x-4 relative">
             <div className="z-10">
@@ -149,7 +149,10 @@ const FAQ = () => {
             boxShadow: "0 5px 15px rgba(37, 99, 235, 0.4)",
           }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => navigate("/contact-us")}
+          onClick={() => {
+  navigate("/contact-us");
+  window.scrollTo(0, 0);
+}}
         >
           Get in touch
         </motion.button>
