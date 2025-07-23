@@ -106,7 +106,7 @@ const ProductList = () => {
               <StarRating rating={product.rating} />
             </div>
             <div className="flex justify-between items-center mt-4">
-              <Link to={'/Product'} className="mt-4 w-full bg-black text-white py-2 rounded-sm m-2 hover:bg-gray-800 transition">
+              <Link to={'/Product'} onClick={() => {window.scrollTo(0,0)}} className="mt-4 w-full bg-black text-white py-2 rounded-sm m-2 hover:bg-gray-800 transition">
                  <button className='text-center w-full'>
                     View Product
                  </button>
