@@ -30,7 +30,9 @@ function NavBar() {
   src={LOGO_Gold_no} 
   alt="" 
 />
-    <Link to={'/'} className="btn btn-ghost text-xl">VOID</Link>
+    <Link to={'/'} 
+            onClick={() => window.scrollTo(0, 0)}
+             className="btn btn-ghost text-xl">VOID</Link>
   </div>
 
 
