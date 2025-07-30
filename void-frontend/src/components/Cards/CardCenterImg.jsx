@@ -62,7 +62,7 @@ function CardCenterImg() {
       <h1 className='text-center text-2xl font-semibold mt-10'>Premium Collections</h1>
       <div className='flex flex-wrap justify-center gap-5 p-5 md:p-10'>
         {products.map((product) => (
-            <div key={product.id} className="card bg-base-100 w-96 shadow-sm">
+            <div key={product.id} className="card bg-gray-200 w-96 shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-300">
   <figure className="px-5 md:px:10 pt-10">
     <img
       src={product.img}

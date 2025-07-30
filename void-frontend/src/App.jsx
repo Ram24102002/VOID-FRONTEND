@@ -10,7 +10,8 @@ import NavbarMobile from './components/common/NavbarMobile';
 import AnimePage from './pages/AnimePage';
 import Footer from './components/common/Footer';
 import ContactUsPage from './pages/ContactUsPage';
-import Product from './pages/Product.jsx';
+import Product from './pages/Product';
+import CheckOut from './pages/CheckOut'
 
 
 function AppContent() {
@@ -36,6 +37,7 @@ function AppContent() {
         <Route path='/collections' element={<CollectionsPage />} />
         <Route path="/anime" element={<AnimePage />} />
         <Route path="/product" element={<Product />} />
+        <Route path='/check-out' element={<CheckOut />} />
 
       </Routes>
       
