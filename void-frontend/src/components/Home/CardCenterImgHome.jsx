@@ -39,7 +39,7 @@ function CardCenterImgHome() {
       <h1 className='text-center text-2xl font-semibold mt-10' id='theme-card'>Our Anime Themes</h1>
       <div className='flex flex-wrap justify-center gap-5  p-5 md:p-10'>
         {products.map((product) => (
-            <div key={product.id} className="card bg-base-100  shadow-sm">
+            <div key={product.id} className="card bg-base-100 shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-96">
   <figure className="px-5 md:px-10 pt-10">
     <img
       src={product.img}
@@ -50,7 +50,7 @@ function CardCenterImgHome() {
     <h2 className="card-title">{product.title}</h2>
     <p>{product.description}</p>
     <div className="card-actions">
-      <button className="btn bg-indigo-600 text-white ">Explore Collections</button>
+      <button className="btntext-purple-700 px-3 py-2 bg-indigo-600 text-white hover:text-white border border-purple-700 hover:bg-black rounded-sm">Explore Collections</button>
     </div>
   </div>
 </div>

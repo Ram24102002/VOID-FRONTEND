@@ -3,6 +3,7 @@ import { ShoppingCart, X } from "lucide-react"; // Assuming you have lucide-reac
 import { useState } from 'react'; // Uncomment if you need state management for cart items
 import Yellow from '../../assets/ColorTheme/Yellow.jpg';
 import tame from '../../assets/ColorTheme/tame.jpg';
+import {Link} from 'react-router-dom'
 
 function CartDrawer() {
 
@@ -102,7 +103,7 @@ function CartDrawer() {
         <p className="text-xs text-gray-500 mb-4 dark:text-gray-200">Shipping and taxes calculated at checkout.</p>
       </div>
         
-      <button className="btn btn-primary mt-4 ">Checkout</button>
+      <Link to={'/check-out'} onClick={() => document.getElementById('my-drawer-4').checked = false} className="btn btn-primary mt-4 ">Checkout</Link>
       </div>
   </div>
 </div>
