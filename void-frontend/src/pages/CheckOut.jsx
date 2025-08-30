@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { X, Minus, Plus , IndianRupee , SendHorizontal  } from 'lucide-react';
+import Yellow from '../assets/ColorTheme/Yellow.jpg';
+import tame from '../assets/ColorTheme/tame.jpg';
+import whitishGray from '../assets/ColorTheme/WhitishGray.jpg'
+import black from '../assets/ColorTheme/black.jpg'
 
 export default function CheckOut() {
   const [items, setItems] = useState([
@@ -9,7 +13,7 @@ export default function CheckOut() {
       color: "Beige",
       price: 248,
       quantity: 1,
-      image: "/api/placeholder/200/200"
+      image: Yellow
     },
     {
       id: 2,
@@ -17,7 +21,8 @@ export default function CheckOut() {
       color: "Apricot / Large",
       price: 298,
       quantity: 1,
-      image: "/api/placeholder/200/200"
+      image: tame,
+      alt: "/api/placeholder/200/200"
     },
     {
       id: 3,
@@ -25,7 +30,8 @@ export default function CheckOut() {
       color: "Apricot / Large",
       price: 298,
       quantity: 1,
-      image: "/api/placeholder/200/200"
+      image: whitishGray,
+      alt: "/api/placeholder/200/200"
     },
     {
       id: 4,
@@ -33,7 +39,8 @@ export default function CheckOut() {
       color: "Apricot / Large",
       price: 298,
       quantity: 1,
-      image: "/api/placeholder/200/200"
+      image: black,
+      alt: "/api/placeholder/200/200"
     }
   ]);
 
@@ -49,9 +56,44 @@ export default function CheckOut() {
     setItems(items.filter(item => item.id !== id));
   };
 
+  
+    function VoidCheckoutScreen(){
+    return new Promise( (resolve, reject)=>{
+    setTimeout(()=>{
+        const checkoutScreen = true;
+        if(checkoutScreen){
+        resolve("Got into Checkout Screen ✌️");
+    }else{
+        reject("WTF 😿");
+    }
+    },1500)
+    })
+                       }
+        
+    async function VoidCheckoutScreenAwait(){
+        try{
+          const w =await VoidCheckoutScreen();
+        console.log(w);
+        }
+        catch(error){
+          console.log(error);
+        }
+    }
+    VoidCheckoutScreenAwait()
+
+
+
+
+
+
+  
+
+
+
+
   return (
     <section className='flex flex-col lg:flex-row justify-center'>
-        <aside className=" grid grid-cols-1 lg:grid-cols-2 gap-6 p-10 px-15 min-h-screen w-full lg:w-1/2">
+        <aside className=" grid grid-cols-1 md:grid-cols-2 gap-6 p-10 px-15 min-h-screen w-full lg:w-1/2">
       {items.map((item) => (
         <div key={item.id} className=" bg-gray-200 rounded-lg shadow-sm max-h-130 border border-gray-200 p-6 w-80">
           {/* Header with title and close button */}
@@ -71,10 +113,8 @@ export default function CheckOut() {
           </div>
 
           {/* Product Image */}
-          <div className="bg-gray-100 rounded-lg mb-6 aspect-square flex items-center justify-center">
-            <div className="w-32 h-32 bg-gradient-to-br from-amber-100 to-amber-200 rounded-lg flex items-center justify-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-amber-200 to-amber-300 rounded-md opacity-60"></div>
-            </div>
+          <div className="bg-gray-100 rounded-lg mb-6 aspect-video flex items-center justify-center">
+              <img src={item.image} alt=""  className='h-70 object-cover' />
           </div>
 
           {/* Quantity Controls */}
@@ -97,7 +137,7 @@ export default function CheckOut() {
           {/* Subtotal */}
           <div className="flex justify-between items-center pt-4 border-t border-gray-200">
             <span className="text-gray-600">Subtotal</span>
-            <span className="font-medium text-lg text-black">${item.price * item.quantity}</span>
+            <span className="font-medium text-lg text-black">₹{item.price * item.quantity}</span>
           </div>
         </div>
       ))}
@@ -118,13 +158,13 @@ export default function CheckOut() {
 
       {/* SGST Row */}
       <div className="flex justify-between items-center py-3  border-b border-gray-200 ">
-        <span className="text-gray-700 dark:text-white">SGST 18%</span>
+        <span className="text-gray-700 dark:text-white">Delivery charges</span>
         <span className="text-gray-900 dark:text-white font-medium ">₹396</span>
       </div>
 
       {/* CGST Row */}
       <div className="flex justify-between items-center py-3 border-b border-gray-400 ">
-        <span className="text-gray-700 dark:text-white">CGST 18%</span>
+        <span className="text-gray-700 dark:text-white">Convenience Fee</span>
         <span className="text-gray-900 dark:text-white font-medium ">₹396</span>
       </div>
       
@@ -157,6 +197,9 @@ export default function CheckOut() {
         <p>Checkout and Pay </p> <IndianRupee className='mx-2' />
       </button>
     </aside>
+
+
+    
 
     </section>
   );
