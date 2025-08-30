@@ -1,4 +1,3 @@
-import React from 'react'
 import { ShoppingCart, X } from "lucide-react"; // Assuming you have lucide-react installed for icons
 import { useState } from 'react'; // Uncomment if you need state management for cart items
 import Yellow from '../../assets/ColorTheme/Yellow.jpg';

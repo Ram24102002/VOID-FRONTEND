@@ -6,8 +6,7 @@ export default defineConfig({
   plugins: [tailwindcss(),react()],
   preview: {
     allowedHosts: ['void-fashion.onrender.com'],
-    port: process.env.PORT || 4173,
-    host: '0.0.0.0'
+    port: process.env.VITE_BASE_PATH || 'VOID-FRONTEND',
   }
 })
 
